@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="border-t  md:py-0 w-full flex justify-center items-center flex-col py-6 px-6">
       <div className="container w-[4/5] flex flex-col items-center justify-between gap-4 md:h-20 md:flex-row">
         <p className="text-center text-3xl font-semibold leading-loose  md:text-left">
-          Brainnest
+          Smart Sentinel
           
           
         </p>

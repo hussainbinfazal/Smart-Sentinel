@@ -37,25 +37,79 @@ export default function Header() {
             href="/"
             className="mr-6 flex items-center space-x-2 cursor-pointer"
           >
-            <span className="font-bold  text-3xl flex items-center gap-2">
+            <div className="font-bold  text-3xl flex items-center gap-2 p-1">
               {" "}
               <Image
                 src="/logo/smart-sentinel.jpg"
                 alt="logo"
                 width={40}
                 height={40}
-                className="mr-2"
+                className="mr-2 "
               />
-            </span>
+              <span className="whitespace-nowrap text-black dark:text-white font-semibold pb-1">
+                Smart Sentinel
+              </span>
+            </div>
           </Link>
         </div>
 
-        <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end ">
-          <div className="hidden md:flex">
+        <div className="flex flex-1 items-center justify-between space-x-2 min-[25rem]:justify-end ">
+          <div className="flex items-center space-x-2 min-[25rem]:space-x-1 min-[50rem]:hidden">
+            <Link href="/cart" className="px-4 overflow-hidden ">
+              <div
+                className={`h-[2.2rem] ${
+                  isHovering
+                    ? "w-[8.2rem] justify-start pl-2 gap-3 "
+                    : "w-[2.2rem] justify-center "
+                }  relative border border-border rounded-md flex items-center  transition-all  duration-700 ease-in-out overflow-hidden`}
+                onMouseMove={() => setIsHovering(true)}
+                onMouseLeave={() => setIsHovering(false)}
+              >
+                <div className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-white dark:bg-transparent rounded-full p-1">
+                  <Phone className="h-4 w-4 text-[#9D9FA0] dark:text-white" />
+                </div>
+                <div
+                  className={`ml-7 transition-all duration-800 ease-in-out z-1 bg-white dark:bg-transparent ${
+                    isHovering
+                      ? "opacity-100 transform translate-x-0"
+                      : "opacity-0 transform translate-x-4"
+                  }`}
+                >
+                  <span
+                    className="text-[#9D9FA0] dark:text-white whitespace-nowrap"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      navigator.clipboard
+                        .writeText("7840090049")
+                        .then(() => {
+                          toast.success("Phone number copied to clipboard!");
+                          e.target.style.color = "#10b981";
+                          setTimeout(() => {
+                            e.target.style.color = "";
+                          }, 500);
+                        })
+                        .catch((err) => {
+                          console.error("Failed to copy: ", err);
+                        });
+                    }}
+                    title="Click to copy phone number"
+                  >
+                    7840090049
+                  </span>
+                </div>
+              </div>
+            </Link>
+
+            <div className="flex items-center gap-4">
+              <ThemeToggler />
+            </div>
+          </div>
+          <div className="hidden min-[50rem]:flex">
             <nav className="flex items-center">
               <Link
                 href="/courses"
-                className="px-4 hover:underline underline-offset-4"
+                className="px-4 hover:underline underline-offset-4 text-black dark:text-white "
               >
                 Services
               </Link>
@@ -75,18 +129,18 @@ export default function Header() {
                   onMouseMove={() => setIsHovering(true)}
                   onMouseLeave={() => setIsHovering(false)}
                 >
-                  <div className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-white">
-                    <Phone className="h-4 w-4 text-[#9D9FA0]" />
+                  <div className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-white dark:bg-transparent rounded-full p-1">
+                    <Phone className="h-4 w-4 text-[#9D9FA0] dark:text-white" />
                   </div>
                   <div
-                    className={`ml-6 transition-all duration-800 ease-in-out z-1 bg-white ${
+                    className={`ml-7 transition-all duration-800 ease-in-out z-1 bg-white dark:bg-transparent ${
                       isHovering
                         ? "opacity-100 transform translate-x-0"
                         : "opacity-0 transform translate-x-4"
                     }`}
                   >
                     <span
-                      className="text-[#9D9FA0] whitespace-nowrap"
+                      className="text-[#9D9FA0] dark:text-white whitespace-nowrap"
                       onClick={(e) => {
                         e.preventDefault();
                         e.stopPropagation();
