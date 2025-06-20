@@ -1,0 +1,23 @@
+[
+  {
+    "image": "/products/cameras.png",
+    "heading": "CCTV Security Systems",
+    "text": "We install and maintain security cameras for your business. Keep your property safe with 24/7 monitoring and instant alerts."
+  },
+  {
+    "image": "/products/Access-control.jpg",
+    "heading": "Access Control Installation",
+    "text": "We set up door entry systems for your office or warehouse. Control who enters with fingerprint scanners and key cards."
+  },
+   {
+    "image": "/products/card reader.webp",
+    "heading": "Card Reader Systems",
+    "text": "We install smart card readers for secure building access. Perfect for offices and commercial spaces."
+  },
+  {
+    "image": "/products/electric lock2.webp",
+    "heading": "Electric Door Locks",
+    "text": "We provide and install automatic door locks that you can control remotely. Enhanced security for your business."
+  }
+]
+

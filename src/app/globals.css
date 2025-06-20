@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-
+:root {
+  --font-inter: 'Inter', sans-serif;
+}
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -122,12 +124,13 @@
 }
 
 
-.body{
+body{
    scrollbar-width: none; 
   -ms-overflow-style: none; 
   overflow-x: none;
   overflow-y: none;
   scroll-behavior: smooth;
+  font-family: var(--font-inter), sans-serif;
 }
 
 ::-webkit-scrollbar {
