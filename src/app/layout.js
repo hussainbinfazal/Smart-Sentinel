@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`font-inter ${inter.variable} antialiased`}
+        className={`font-inter ${inter.variable} antialiased dark:bg-black/40`}
       >
         <ThemeProvider
           attribute="class"
