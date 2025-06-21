@@ -46,7 +46,7 @@ export default function Header() {
                 height={40}
                 className="mr-2 "
               />
-              <span className="whitespace-nowrap text-black dark:text-white font-semibold pb-1">
+              <span className="whitespace-nowrap text3xl text-black/150 dark:text-white font-bold pb-0 ml-2">
                 Smart Sentinel
               </span>
             </div>
@@ -61,12 +61,12 @@ export default function Header() {
                   isHovering
                     ? "w-[8.9rem] justify-start pl-2 gap-3 "
                     : "w-[2.2rem] justify-center "
-                }  relative border border-border rounded-md flex items-center  transition-all  duration-700 ease-in-out overflow-hidden`}
+                }  relative border border-border rounded-md flex items-center  transition-all  duration-700 ease-in-out overflow-hidden bg-white dark:bg-transparent`}
                 onMouseMove={() => setIsHovering(true)}
                 onMouseLeave={() => setIsHovering(false)}
               >
-                <div className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-white dark:bg-transparent rounded-full ">
-                  <Phone className="h-4 w-4 text-[#9D9FA0] dark:text-white mr-1 " />
+                <div className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-none dark:bg-transparent rounded-full ">
+                  <Phone className="h-4 w-4 bg-none text-[#9D9FA0] dark:text-white mr-1 " />
                 </div>
                 <div
                   className={`ml-7 transition-all duration-800 ease-in-out z-1 bg-white dark:bg-transparent ${
@@ -76,12 +76,12 @@ export default function Header() {
                   }`}
                 >
                   <span
-                    className="text-[#9D9FA0] dark:text-white whitespace-nowrap w-full"
+                    className="text-[#9D9FA0] bg-none dark:text-white whitespace-nowrap w-full"
                     onClick={(e) => {
                       e.preventDefault();
                       e.stopPropagation();
                       navigator.clipboard
-                        .writeText("7840090049")
+                        .writeText(process.env.NEXT_PUBLIC_PHONE_NUMBE)
                         .then(() => {
                           toast.success("Phone number copied to clipboard!");
                           e.target.style.color = "#10b981";
@@ -130,7 +130,7 @@ export default function Header() {
                   onMouseLeave={() => setIsHovering(false)}
                 >
                   <div className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-white dark:bg-transparent rounded-full p-1">
-                    <Phone className="h-4 w-4 text-[#9D9FA0] dark:text-white" />
+                    <Phone className="h-4 w-4 bg-none text-[#9D9FA0] dark:text-white" />
                   </div>
                   <div
                     className={`ml-7 transition-all duration-800 ease-in-out z-1 bg-white dark:bg-transparent ${

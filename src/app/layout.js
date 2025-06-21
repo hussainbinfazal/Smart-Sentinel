@@ -3,6 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider"
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import { Toaster } from "sonner";
 
 
 
@@ -31,6 +32,7 @@ export default function RootLayout({ children }) {
           <Header />
           {children}
           <Footer  />
+          <Toaster /> 
         </ThemeProvider>
       </body>
     </html>

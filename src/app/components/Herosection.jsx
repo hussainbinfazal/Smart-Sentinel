@@ -31,9 +31,9 @@ const Herosection = () => {
       >
         <CarouselContent className={"bg-[#D4D4D4]/20 dark:bg-black border-none outline-none "}>
           {(products || []).map((product) => (
-            <CarouselItem key={product} className={"border-none  outline-none bg-[#D4D4D4]/20 dark:bg-black gap-x-2 "}>
+            <CarouselItem key={product} className={"border-none  outline-none bg-[#D4D4D4]/20 dark:bg-black gap-x-2 !p-2"}>
               <div className="relative w-full h-full bg-[#D4D4D4]/20  border-none outline-none dark:rounded-sm  ">
-                <Card className="w-full h-full  max-h-[700px] !p-0 rounded-none bg-[#D4D4D4]/20 outline-none border-none dark:rounded-sm">
+                <Card className="w-full h-full  max-h-[700px] !p-0 rounded-none bg-[#D4D4D4]/20 outline-none border-none dark:rounded-sm border-0 shadow-none">
                   <CardContent className="flex aspect-square items-center justify-center p-0  rounded-none w-full max-h-[700px] outline-none border-none">
                     <div className="relative w-full h-full border-none outline-none">
                       <Image
@@ -52,7 +52,7 @@ const Herosection = () => {
                         </p>
                         </div>
                       </div>
-                      <div className="backdrop-blur-[2px]  backdrop-brightness-105 z-5 rounded-sm dark:rounded-lg w-full h-full"></div>
+                      <div className="backdrop-blur-[2px]  backdrop-brightness-105 z-5 rounded-sm dark:rounded-lg w-full h-full !border-none !outline-none"></div>
                     </div>
                   </CardContent>
                 </Card>
@@ -60,8 +60,8 @@ const Herosection = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className={"border-none outline-none text-gray-300 bg-transparent"} />
-        <CarouselNext className={"border-none outline-none text-gray-300 bg-transparent"}/>
+        {/* <CarouselPrevious className={"border-none outline-none text-gray-300 bg-transparent"} />
+        <CarouselNext className={"border-none outline-none text-gray-300 bg-transparent"}/> */}
       </Carousel>
     </div>
   );

@@ -34,9 +34,9 @@ const Testimonials = () => {
     },
   ]);
   return (
-    <div className="max-w-screen-2xl w-full min-h-[300px] max-h-[400p4] bg-white dark:bg-black/40 flex flex-col items-center justify-center p-4">
+    <div className="max-w-screen-2xl w-full min-h-[300px] max-h-[800px] md:max-h-[400px] bg-white dark:bg-black/40 flex flex-col items-center justify-center border-none outline-none p-8">
       <Carousel
-        className="w-1/2 max-w-full !p-0 bg-transparent dark:bg-black  outline-none border-none"
+        className="w-full md:w-2/3 max-w-full !p-0  dark:bg-black  !outline-none !border-none bg-white"
         opts={{
           align: "start",
           loop: true,
@@ -51,29 +51,26 @@ const Testimonials = () => {
         ]}
       >
         <CarouselContent
-          className={"bg-transparent dark:bg-black border-none outline-none "}
+          className={" bg-white dark:bg-black !border-none !outline-none p-0 m-0"}
         >
           {(testimonial || []).map((testimonial) => (
             <CarouselItem
               key={testimonial?.key}
-              className={
-                "border-none  outline-none  dark:bg-black gap-x-2 "
-              }
+              className={"!border-none border-white !rounded-none  !outline-none  dark:bg-black !p-0"}
             >
-              <div className="relative w-full h-full  border-none outline-none dark:rounded-sm  ">
-                <Card className="w-full h-full  max-h-[400px] !p-0 rounded-none  outline-none border-none dark:rounded-sm bg-transparent">
-                  <CardContent className="flex flex-col aspect-square bg-transparent items-center justify-start gap-8 p-0  rounded-none w-full max-h-[400px] outline-none border-none">
-                    
-                      <p>
-                        "{testimonial?.text}"
-                      </p>
-                    
-                    <div className="relative w-full h-1/2 border-none outline-none">
+              <div className="relative w-full h-full  !border-none !outline-none rounded-none dark:rounded-sm  ">
+                <Card className="w-full h-full max-h-[800px]  md:max-h-[400px] p-4  rounded-none  !outline-none !border-none shadow-none border-0 dark:rounded-sm bg-transparent">
+                  <CardContent className="flex flex-col aspect-square bg-transparent items-center justify-start gap-8 p-0  !rounded-none w-full max-h-[400px] !outline-none border-none">
+                    <p className="text-2xl md:text-4xl min-h-[150px] max-h-[700px] md:max-h-[200px] overflow-hidden w-full  text-center font-semibold">
+                      "{testimonial?.text}"
+                    </p>
+
+                    <div className="relative w-2/3 h-1/2 !border-none !outline-none rounded-lg">
                       <Image
                         src={testimonial?.image}
                         alt={"Product Image"}
                         fill
-                        className="object-contain relative rounded-none  z-0 border-none outline-none"
+                        className="object-contain relative rounded-lg  z-0 !border-none !outline-none"
                       />
                     </div>
                   </CardContent>
