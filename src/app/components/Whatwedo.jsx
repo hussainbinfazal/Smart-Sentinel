@@ -45,7 +45,7 @@ const Whatwedo = () => {
       </h2>
       <div className="flex flex-col md:flex-row gap-4 w-full min-h-[400px] justify-center  md:items-start mt-8 items-center">
         {cards.map((card) => (
-          <Card className="w-full max-w-sm md:max-w-full min-h-[350px] md:h-full max-h-[500px] overflow-hidden dark:bg-black/40">
+          <Card className="w-full max-w-sm md:max-w-full min-h-[350px] h-[400px] xl:h-[380px] 2xl:h-[300px] md:h-[400px]  max-h-[500px] overflow-hidden dark:bg-black/40">
             <CardContent className="flex flex-col justify-between gap-7 pb-4">
               <span className="text-black/80 dark:text-white w-full justify-center flex  text-lg">
                 {card?.icon}

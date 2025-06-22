@@ -5,13 +5,16 @@ import Link from "next/link"
 
 export default function Footer() {
   return (
-    <footer className="border-t  md:py-0 w-full flex justify-center items-center flex-col py-6 px-6">
+    <footer className="mt-8 min-h-[300px]  md:py-0 w-full border-t-none flex justify-center items-center flex-col py-6 px-6">
       <div className="container w-[4/5] flex flex-col items-center justify-between gap-4 md:h-20 md:flex-row">
-        <p className="text-center text-3xl font-semibold leading-loose  md:text-left">
+        <div>
+          
+          <p className="text-center text-3xl font-semibold leading-loose  md:text-left">
           Smart Sentinel
           
           
         </p>
+        </div>
         <div className="flex items-center gap-4">
           <Link
             href="/terms"

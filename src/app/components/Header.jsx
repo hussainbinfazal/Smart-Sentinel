@@ -121,7 +121,7 @@ export default function Header() {
               </Link>
               <Link href="/cart" className="px-4 overflow-hidden ">
                 <div
-                  className={`h-[2.2rem] ${
+                  className={`h-[2.2rem] bg-white ${
                     isHovering
                       ? "w-[8.9rem] justify-start pl-2 gap-3 "
                       : "w-[2.2rem] justify-center "
@@ -130,7 +130,7 @@ export default function Header() {
                   onMouseLeave={() => setIsHovering(false)}
                 >
                   <div className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-white dark:bg-transparent rounded-full p-1">
-                    <Phone className="h-4 w-4 bg-none text-[#9D9FA0] dark:text-white" />
+                    <Phone className="h-4 w-4 bg-none text-[#9D9FA0] bg-transparent dark:text-white" />
                   </div>
                   <div
                     className={`ml-7 transition-all duration-800 ease-in-out z-1 bg-white dark:bg-transparent ${
