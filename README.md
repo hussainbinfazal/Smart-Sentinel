@@ -81,7 +81,7 @@ Git for version control
 ### Installation & Setup
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/smart-sentinel.git
+git clone https://github.com/hussainbinfazal/Smart-Sentinel.git
 cd smart-sentinel
 
 # Install dependencies
@@ -199,6 +199,6 @@ Smart Sentinel is a forward-thinking security solutions provider committed to pr
 
 **Built with ❤️ using Next.js, React, and modern web technologies**
 
-[⭐ Star this project](https://github.com/yourusername/smart-sentinel) | [🐛 Report Bug](https://github.com/yourusername/smart-sentinel/issues) | [✨ Request Feature](https://github.com/yourusername/smart-sentinel/issues)
+[⭐ Star this project](https://github.com/hussainbinfazal/Smart-Sentinel) | [🐛 Report Bug](https://github.com/hussainbinfazal/Smart-Sentinel/issues) | [✨ Request Feature](https://github.com/hussainbinfazal/Smart-Sentinel/issues)
 
 </div>
