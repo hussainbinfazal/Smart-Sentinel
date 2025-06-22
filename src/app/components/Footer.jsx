@@ -73,7 +73,7 @@ export default function Footer() {
           <div className="w-full md:justify-end justify-center flex">
             <span className="text-green-500 text-4xl w-full flex md:justify-end justify-center">
               <a
-                href="https://wa.me/1234567890"
+                href={`https://wa.me/${process.env.NEXT_PUBLIC_PHONE_NUMBER}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-green-600 underline"

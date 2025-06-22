@@ -56,7 +56,7 @@ export default function Header() {
         <div className="flex flex-1 items-center justify-between space-x-2 min-[25rem]:justify-end ">
           <div className="flex items-center space-x-2 min-[25rem]:space-x-1 min-[50rem]:hidden">
             <Link
-              href="https://wa.me/1234567890"
+              href={`https://wa.me/${process.env.NEXT_PUBLIC_PHONE_NUMBE}`}
               target="_blank"
               rel="noopener noreferrer"
               className="px-4   overflow-hidden "
@@ -101,12 +101,12 @@ export default function Header() {
                     title="Click to copy phone number"
                   >
                     <a
-                      href="https://wa.me/1234567890"
+                      href={`https://wa.me/${process.env.NEXT_PUBLIC_PHONE_NUMBER}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className=" underline"
                     >
-                      7840090049
+                      {process.env.NEXT_PUBLIC_PHONE_NUMBER}
                     </a>
                   </span>
                 </div>
@@ -138,8 +138,7 @@ export default function Header() {
                 About
               </Link>
               <Link
-                href="https://wa.me/1234567890"
-                target="_blank"
+                href={`https://wa.me/${process.env.NEXT_PUBLIC_PHONE_NUMBER}`}                target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 overflow-hidden "
               >
@@ -168,7 +167,7 @@ export default function Header() {
                         e.preventDefault();
                         e.stopPropagation();
                         navigator.clipboard
-                          .writeText("7840090049")
+                          .writeText(`${process.env.NEXT_PUBLIC_PHONE_NUMBER}`)
                           .then(() => {
                             toast.success("Phone number copied to clipboard!");
                             e.target.style.color = "#10b981";
@@ -183,12 +182,12 @@ export default function Header() {
                       title="Click to copy phone number"
                     >
                       <a
-                        href="https://wa.me/1234567890"
+                        href={`https://wa.me/${process.env.NEXT_PUBLIC_PHONE_NUMBER}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className=" underline"
                       >
-                        7840090049
+                        {process.env.NEXT_PUBLIC_PHONE_NUMBER}
                       </a>
                     </span>
                   </div>
