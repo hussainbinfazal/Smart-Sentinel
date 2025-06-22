@@ -34,7 +34,7 @@ const Testimonials = () => {
     },
   ]);
   return (
-    <div className="max-w-screen-2xl w-full min-h-[300px] max-h-[800px] md:max-h-[400px] bg-white dark:bg-black/40 flex flex-col items-center justify-center border-none outline-none p-8">
+    <div className="max-w-screen-2xl w-full min-h-[300px] max-h-[800px] md:max-h-[400px] bg-white dark:bg-black/40 flex flex-col items-center justify-center border-none outline-none p-8" id="testimonials">
       <Carousel
         className="w-full md:w-2/3 max-w-full !p-0  dark:bg-black  !outline-none !border-none bg-white"
         opts={{

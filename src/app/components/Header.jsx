@@ -55,7 +55,12 @@ export default function Header() {
 
         <div className="flex flex-1 items-center justify-between space-x-2 min-[25rem]:justify-end ">
           <div className="flex items-center space-x-2 min-[25rem]:space-x-1 min-[50rem]:hidden">
-            <Link href="/cart" className="px-4   overflow-hidden ">
+            <Link
+              href="https://wa.me/1234567890"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4   overflow-hidden "
+            >
               <div
                 className={`h-[2.2rem] ${
                   isHovering
@@ -95,7 +100,14 @@ export default function Header() {
                     }}
                     title="Click to copy phone number"
                   >
-                    7840090049
+                    <a
+                      href="https://wa.me/1234567890"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className=" underline"
+                    >
+                      7840090049
+                    </a>
                   </span>
                 </div>
               </div>
@@ -108,20 +120,31 @@ export default function Header() {
           <div className="hidden min-[50rem]:flex">
             <nav className="flex items-center">
               <Link
-                href="/courses"
+                href="#testimonials"
+                className="px-4 hover:underline underline-offset-4 text-black dark:text-white "
+              >
+                Testimonials
+              </Link>
+              <Link
+                href="#whatwedo"
                 className="px-4 hover:underline underline-offset-4 text-black dark:text-white "
               >
                 Services
               </Link>
               <Link
-                href="/about"
+                href="#about"
                 className="px-4 hover:underline underline-offset-4"
               >
                 About
               </Link>
-              <Link href="/cart" className="px-4 overflow-hidden ">
+              <Link
+                href="https://wa.me/1234567890"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 overflow-hidden "
+              >
                 <div
-                  className={`h-[2.2rem] bg-white ${
+                  className={`h-[2.2rem] bg-white dark:bg-transparent ${
                     isHovering
                       ? "w-[8.9rem] justify-start pl-2 gap-3 "
                       : "w-[2.2rem] justify-center "
@@ -159,7 +182,14 @@ export default function Header() {
                       }}
                       title="Click to copy phone number"
                     >
-                      7840090049
+                      <a
+                        href="https://wa.me/1234567890"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className=" underline"
+                      >
+                        7840090049
+                      </a>
                     </span>
                   </div>
                 </div>

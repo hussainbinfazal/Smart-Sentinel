@@ -52,7 +52,6 @@ const Form = () => {
     }
   };
   const handleSubmit = async (e) => {
-    console.log("submit");
     e.preventDefault();
     const result = formSchema.safeParse({ name, email, phone });
     if (!result.success) {

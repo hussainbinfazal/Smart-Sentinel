@@ -37,7 +37,7 @@ const Whatwedo = () => {
     },
   ]);
   return (
-    <div className="max-w-screen-2xl w-full min-h-[300px] bg-white dark:bg-black/40 flex flex-col items-center justify-center p-4 gap-14">
+    <div className="max-w-screen-2xl w-full min-h-[300px] bg-white dark:bg-black/40 flex flex-col items-center justify-center p-4 gap-14" id="whatwedo">
       <h2 className="uppercase text-lg md:text-lg">What We Do </h2>
       <h2 className="uppercase text-4xl text-center">
         <span className="text-green-800 font-semibold">Smart Sentinel</span> is
