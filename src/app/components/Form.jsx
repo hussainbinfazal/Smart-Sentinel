@@ -32,7 +32,7 @@ const Form = () => {
   const [phone, setPhone] = useState("");
   const [name, setName] = useState("");
   const [errors, setErrors] = useState({});
-
+const [loading, setLoading] = useState(false)
   const submitEmail = async () => {
     const emailData = {
       email,
@@ -47,11 +47,14 @@ const Form = () => {
       setEmail("");
       setName("");
       setPhone("");
+      setLoading(false)
     } catch (error) {
       toast.error("Failed to send email!");
+      setLoading(false)
     }
   };
   const handleSubmit = async (e) => {
+    setLoading(true)
     e.preventDefault();
     const result = formSchema.safeParse({ name, email, phone });
     if (!result.success) {
@@ -140,8 +143,8 @@ const Form = () => {
                   )}
                 </div>
               </div>
-              <Button type="submit" className="w-full bg-green-800 dark:bg-green-800 mt-6 text-white " disabled={name === "" || email === "" || phone === ""}>
-                Get Free Security Assessment
+              <Button type="submit" className="w-full bg-green-800 dark:bg-green-800 mt-6 cursor-pointer text-white " disabled={name === "" || email === "" || phone === ""}>
+                {loading ? "Sending..." : "Get Free Security Assessment"}
               </Button>
             </form>
           </CardContent>
