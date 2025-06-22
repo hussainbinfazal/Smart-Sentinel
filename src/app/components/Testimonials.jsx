@@ -61,7 +61,7 @@ const Testimonials = () => {
               <div className="relative w-full h-full  !border-none !outline-none rounded-none dark:rounded-sm  ">
                 <Card className="w-full h-full max-h-[800px]  md:max-h-[400px] p-4  rounded-none  !outline-none !border-none shadow-none border-0 dark:rounded-sm bg-transparent">
                   <CardContent className="flex flex-col aspect-square bg-transparent items-center justify-start gap-8 p-0  !rounded-none w-full max-h-[400px] !outline-none border-none">
-                    <p className="text-2xl md:text-4xl min-h-[150px] max-h-[700px] md:max-h-[200px] overflow-hidden w-full  text-center font-semibold">
+                    <p className="text-2xl md:text-4xl min-h-[150px] max-h-[700px] w-full  text-center font-semibold">
                       "{testimonial?.text}"
                     </p>
 

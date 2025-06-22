@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -16,6 +16,7 @@ import { Label } from "@/components/ui/label";
 import { z } from "zod";
 import axios from "axios";
 import { toast } from "sonner";
+import { Shield } from "lucide-react";
 
 export const formSchema = z.object({
   name: z.string().min(1, "Name is required").max(100, "Name is too long"),
@@ -40,7 +41,9 @@ const Form = () => {
     };
     try {
       const response = await axios.post("/api/submitEmail", emailData);
-      toast.success("Email sent successfully!");
+      toast.success(
+        "Security consultation request sent successfully! Our team will contact you within 24 hours."
+      );
       setEmail("");
       setName("");
       setPhone("");
@@ -64,13 +67,28 @@ const Form = () => {
     }
   };
   return (
-    <div className="max-w-screen-2xl w-full dark:bg-black min-h-[300px] bg-white flex flex-col items-center justify-center p-4">
-      <div>
-        <Card className="w-full max-w-sm  md:w-full bg-black">
+    <div className="max-w-screen-2xl w-full dark:bg-black min-h-[300px] bg-white flex flex-col items-center justify-center p-4 ">
+      <div className="w-full flex flex-col items-center justify-center gap-16">
+        <div className="text-center mb-8">
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <h2 className="text-3xl font-semibold text-gray-900 dark:text-white uppercase">
+              <span className="font-bold text-green-800">Secure</span> Your Property Today
+            </h2>
+          </div>
+          <p className="text-lg text-black dark:text-white mb-2">
+            Ready to protect what matters most? Get a <span className="font-bold text-green-800 curs">Free</span> security assessment
+            from our certified professionals.
+          </p>
+          <p className="text-sm text-gray-500 dark:text-gray-400">
+            Fill out the form below or call us directly for immediate
+            assistance.
+          </p>
+        </div>
+        <Card className="w-full max-w-sm  md:max-w-full dark:bg-black bg-white">
           <CardContent>
             <form onSubmit={handleSubmit}>
-              <div className="flex flex-col gap-6">
-                <div className="grid gap-3">
+              <div className="flex md:flex-row justify-between flex-col gap-6">
+                <div className="grid gap-3 md:w-1/3">
                   <Label htmlFor="email">Name</Label>
                   <Input
                     id="name"
@@ -80,14 +98,14 @@ const Form = () => {
                     onChange={(e) => setName(e.target.value.trim())}
                     required
                     className={
-                      "dark:bg-black border-t-0 border-r-0 border-l-0 rounded-none outline-none  border-b-2"
+                      "dark:bg-black border-t-0 border-r-0 border-l-0 rounded-none outline-none  border-b-2 "
                     }
                   />
                   {errors.name && (
                     <span className="text-red-500 text-xs">{errors.name}</span>
                   )}
                 </div>
-                <div className="grid gap-3">
+                <div className="grid gap-3 md:w-1/3">
                   <Label htmlFor="email">Email</Label>
                   <Input
                     id="email"
@@ -97,14 +115,14 @@ const Form = () => {
                     onChange={(e) => setEmail(e.target.value.trim())}
                     required
                     className={
-                      "dark:bg-black border-t-0 border-r-0 border-l-0 rounded-none outline-none  border-b-2"
+                      "dark:bg-black border-t-0 border-r-0 border-l-0 rounded-none outline-none  border-b-2 focus:outline-none  focus:shadow-none focus:ring-0 focus:border-b-green-800"
                     }
                   />
                   {errors.email && (
                     <span className="text-red-500 text-xs">{errors.email}</span>
                   )}
                 </div>
-                <div className="grid gap-3">
+                <div className="grid gap-3 md:w-1/3">
                   <Label htmlFor="email">Phone</Label>
                   <Input
                     id="number"
@@ -115,7 +133,7 @@ const Form = () => {
                     value={phone}
                     onChange={(e) => setPhone(e.target.value.trim())}
                     className={
-                      "dark:bg-black border-t-0 border-r-0 border-l-0 rounded-none outline-none  border-b-2"
+                      "dark:bg-black border-t-0 border-r-0 border-l-0 rounded-none outline-none  border-b-2 focus:border-0 focus:shadow-none"
                     }
                   />
                   {errors.phone && (
@@ -123,13 +141,12 @@ const Form = () => {
                   )}
                 </div>
               </div>
+              <Button type="submit" className="w-full bg-green-800 dark:bg-green-800 mt-6 text-white " disabled={name === "" || email === "" || phone === ""}>
+                Get Free Security Assessment
+              </Button>
             </form>
           </CardContent>
-          <CardFooter className="flex-col gap-2">
-            <Button type="submit" className="w-full" >
-              Login
-            </Button>
-          </CardFooter>
+          <CardFooter className="flex-col gap-2"></CardFooter>
         </Card>
       </div>
     </div>
