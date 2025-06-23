@@ -56,7 +56,7 @@ export default function Header() {
         <div className="flex flex-1 items-center justify-between space-x-2 min-[25rem]:justify-end ">
           <div className="flex items-center space-x-2 min-[25rem]:space-x-1 min-[50rem]:hidden">
             <Link
-              href={`https://wa.me/${process.env.NEXT_PUBLIC_PHONE_NUMBE}`}
+              href={`https://wa.me/${process.env.NEXT_PUBLIC_PHONE_NUMBER}`}
               target="_blank"
               rel="noopener noreferrer"
               className="px-4   overflow-hidden "
@@ -86,7 +86,7 @@ export default function Header() {
                       e.preventDefault();
                       e.stopPropagation();
                       navigator.clipboard
-                        .writeText(process.env.NEXT_PUBLIC_PHONE_NUMBE)
+                        .writeText(process.env.NEXT_PUBLIC_PHONE_NUMBER)
                         .then(() => {
                           toast.success("Phone number copied to clipboard!");
                           e.target.style.color = "#10b981";
