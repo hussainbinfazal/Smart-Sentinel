@@ -181,7 +181,7 @@ Smart Sentinel is a forward-thinking security solutions provider committed to pr
 
 - **Website**: [smartsentinel.com](https://smartsentinel.com)
 - **Email**: info@smartsentinel.com
-- **Phone**: +91 7840090049
+- **Phone**: +917840090049
 - **Support**: 24/7 Emergency Response Available
 
 ---
