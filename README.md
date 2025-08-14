@@ -8,7 +8,7 @@
 
 Smart Sentinel represents the next generation of security service platforms. This full-stack web application empowers customers to seamlessly request professional security assessments, explore comprehensive service offerings, and connect with certified security professionals for cutting-edge installation and maintenance services.
 
-**[🔗 Live Demo](https://smart-sentinel-demo.vercel.app)** | **[📋 Project Documentation](./docs/README.md)**
+**[🔗 Live Demo](https://www.smartsentinel.in/)** | **[📋 Project Documentation](./docs/README.md)**
 
 ---
 
