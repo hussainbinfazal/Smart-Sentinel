@@ -2,19 +2,19 @@ import { MetadataRoute } from "next";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const staticPages: MetadataRoute.Sitemap = [{
-      url: "https://www.smartsentinel.in/",
+      url: process.env.NEXT_PUBLIC_BASE_URL!,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,
     },
     {
-      url: "https://www.smartsentinel.in/#testimonials",
+      url: `${process.env.NEXT_PUBLIC_BASE_URL}/#testimonials`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,
     },
     {
-      url: "https://www.smartsentinel.in/#whatwedo",
+      url: `${process.env.NEXT_PUBLIC_BASE_URL}/#whatwedo`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,

@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     title: "Smart Sentinel - CCTV, Door Locks, Sensors & Access Control Experts",
     description:
       "Professional installation and maintenance of CCTV cameras, automatic door locks, security sensors, and access control systems for homes and businesses.",
-    url: "https://www.smartsentinel.in", 
+    url: process.env.NEXT_PUBLIC_BASE_URL, 
     type: "website",
     images: [
       {
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     siteName: "Smart Sentinel",
   },
   alternates: {
-    canonical: "https://www.smartsentinel.in",
+    canonical: process.env.NEXT_PUBLIC_BASE_URL,
     languages: {
        "en-US": "/en",
        "hi-IN": "/hi",
