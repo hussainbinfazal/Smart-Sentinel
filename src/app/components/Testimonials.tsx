@@ -56,7 +56,7 @@ const Testimonials = () : JSX.Element => {
           {(testimonial || []).map((testimonial) => (
             <CarouselItem
               key={testimonial?.key}
-              className={" bg-white border-white shadow-none rounded-none  outline-none  dark:bg-black p-0 pr-5 rounded-3xl"}
+              className={" bg-white border-white shadow-none   outline-none  dark:bg-black p-0 pr-5 rounded-3xl"}
             >
               <div className="w-full h-full bg-white shadow-none dark:bg-black rounded-3xl">
   <Card className="relative overflow-hidden border border-border/50 bg-background/100 !dark:bg-black backdrop-blur-none shadow-none rounded-3xl p-8 h-full">
