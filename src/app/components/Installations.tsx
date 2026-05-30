@@ -8,10 +8,10 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { JSX, useState } from "react";
 
-const Installations = () => {
-  const [installedProducts, setInstalledProducts] = useState([
+const Installations = (): JSX.Element => {
+  const [installedProducts, setInstalledProducts] = useState<{ key: number; image: string }[]>([
     {
       key: 1,
       image: "/installed products/lock3.jpg",
@@ -61,6 +61,7 @@ const Installations = () => {
         </h2>
       </div>
       <Carousel
+        setApi={() => {}}
         className="w-full md:w-2/3 max-w-full !p-0  dark:bg-black  !outline-none !border-none bg-white"
         opts={{
           align: "start",

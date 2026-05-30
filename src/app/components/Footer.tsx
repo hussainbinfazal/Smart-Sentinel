@@ -4,8 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { Instagram } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
+import { JSX } from "react";
 
-export default function Footer() {
+export default function Footer() : JSX.Element {
   return (
     <footer className="mt-16 min-h-[290px]  md:py-0 w-full  flex  justify-center items-center flex-col py-6 px-6 bg-[#D4D4D4]/20 dark:bg-black dark:border-t" id="footer ">
       <div className="container w-[4/5] min-h-[280px] h-full flex flex-col items-start justify-between  gap-4  md:flex-row pt-12">
@@ -15,6 +16,7 @@ export default function Footer() {
             width={100}
             height={100}
             className="rounded-lg"
+            alt="Smart Sentinel Logo"
           />
           <p className=" p-2 pl-6 text-center text-3xl font-semibold leading-loose  md:text-left">
             Smart Sentinel
@@ -73,7 +75,7 @@ export default function Footer() {
           <div className="w-full md:justify-end justify-center flex">
             <span className="text-green-500 text-4xl w-full flex md:justify-end justify-center">
               <a
-                href={`https://wa.me/${process.env.NEXT_PUBLIC_PHONE_NUMBER}`}
+                href={`https://wa.me/${process.env.NEXT_PUBLIC_PHONE_NUMBER!}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-green-600 underline"

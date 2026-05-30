@@ -13,7 +13,7 @@ import {
 import products from "@/data/products.json";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
-const Herosection = () => {
+const Herosection: React.FC = () => {
   useEffect(() => {
     console.log("This is the products data", products);
   }, [products]);
@@ -31,7 +31,7 @@ const Herosection = () => {
       >
         <CarouselContent className={"bg-[#D4D4D4]/20 dark:bg-black border-none outline-none "}>
           {(products || []).map((product) => (
-            <CarouselItem key={product} className={"border-none  outline-none bg-[#D4D4D4]/20 dark:bg-black gap-x-2 !p-2"}>
+            <CarouselItem key={product.heading} className={"border-none  outline-none bg-[#D4D4D4]/20 dark:bg-black gap-x-2 !p-2"}>
               <div className="relative w-full h-full bg-[#D4D4D4]/20  border-none outline-none dark:rounded-sm  ">
                 <Card className="w-full h-full  max-h-[700px] !p-0 rounded-none bg-[#D4D4D4]/20 outline-none border-none dark:rounded-sm border-0 shadow-none">
                   <CardContent className="flex aspect-square items-center justify-center p-0  rounded-none w-full max-h-[700px] outline-none border-none">

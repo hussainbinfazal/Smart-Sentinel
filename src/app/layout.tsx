@@ -1,9 +1,12 @@
-import { Geist, Geist_Mono, Inter } from "next/font/google";
+import { JSX, ReactNode } from "react";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider"
+import { Toaster } from "sonner";
+import { Inter } from 'next/font/google';
+import 'react/jsx-runtime';
+import { ThemeProvider } from "next-themes";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import { Toaster } from "sonner";
+import { Metadata } from "next";
 
 
 
@@ -12,15 +15,28 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Smart Sentinel - CCTV, Door Locks, Sensors & Access Control Experts",
   description:
     "Smart Sentinel provides professional installation and maintenance of CCTV cameras, automatic door locks, security sensors, and access control systems. Trusted security solutions for homes and businesses. Get a free security assessment today.",
   keywords: [
     "CCTV installation",
+    "dahua installation",
+    "DAHUA installation",
+    "cp-plus installation",
+    "CP-PLUS installation",
+    "prama installation",
+    "PRAMA installation",
+    "alba installation",
+    "ALBA installation",
+    "panasonic installation",
+    "PANASONIC installation",
     "hikvision camera installation",
+    "HIKVISION camera installation",
     "automatic door locks",
+    "AUTOMATIC door locks",
     "sensor installation",
+    'cctv camera installation',
     "access control systems",
     "security maintenance",
     "security solutions",
@@ -34,7 +50,7 @@ export const metadata = {
     title: "Smart Sentinel - CCTV, Door Locks, Sensors & Access Control Experts",
     description:
       "Professional installation and maintenance of CCTV cameras, automatic door locks, security sensors, and access control systems for homes and businesses.",
-    url: "https://www.smartsentinel.com", 
+    url: "https://www.smartsentinel.in", 
     type: "website",
     images: [
       {
@@ -44,10 +60,21 @@ export const metadata = {
         alt: "Smart Sentinel Logo",
       },
     ],
+    locale: "en_US",
+    siteName: "Smart Sentinel",
   },
+  alternates: {
+    canonical: "https://www.smartsentinel.in",
+    languages: {
+       "en-US": "/en",
+       "hi-IN": "/hi",
+      "es-ES": "/es",
+    }
+  },
+  
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: ReactNode }): JSX.Element {
   return (
     <html lang="en">
       <body

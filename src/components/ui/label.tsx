@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils"
 function Label({
   className,
   ...props
-}) {
+}: React.LabelHTMLAttributes<HTMLLabelElement>) {
   return (
     <LabelPrimitive.Root
       data-slot="label"

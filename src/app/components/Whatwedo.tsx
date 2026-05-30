@@ -1,22 +1,21 @@
 "use client";
 
-import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
+import React, { JSX, useState } from "react";
 import {
   Card,
-  CardAction,
   CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
 } from "@/components/ui/card";
 import { LockKeyhole } from "lucide-react";
 import { Cctv } from "lucide-react";
 import { Megaphone } from "lucide-react";
 
-const Whatwedo = () => {
-  const [cards, setCards] = useState([
+const Whatwedo = () : JSX.Element => {
+  const [cards, setCards] = useState<{
+    key: number;
+    icon: JSX.Element;
+    heading: string;
+    text: string;
+  }[]>([
     {
       key: 1,
       icon: <LockKeyhole className="w-18 h-18"  />,

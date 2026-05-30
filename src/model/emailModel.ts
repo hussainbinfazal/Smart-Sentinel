@@ -1,6 +1,11 @@
 import mongoose from "mongoose";
 
-const emailSchema = new mongoose.Schema({
+export interface IEmail {
+    email: string,
+    name: string,
+    phone: number
+}
+const emailSchema = new mongoose.Schema<IEmail>({
     email: {
         type: String,
         required: true,

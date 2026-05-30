@@ -1,5 +1,4 @@
-import Image from "next/image";
-import Header from "./components/Header";
+
 import Herosection from "./components/Herosection";
 import Whatwedo from "./components/Whatwedo";
 import Testemonials from "./components/Testimonials";
@@ -7,8 +6,9 @@ import Callus from "./components/Callus";
 import OnsiteWork from "./components/OnsiteWork";
 import Form from "./components/Form";
 import Installations from "./components/Installations";
+import { JSX } from "react";
 
-export default function Home() {
+export default function Home(): JSX.Element {
   return (
     <div className="min-h-screen min-w-screen max-w-screen-2xl flex flex-col items-start justify-center bg-white dark:bg-black relative px-10">
       <div className="w-full mx-auto flex flex-col items-center justify-center pt-6 gap-32   dark:bg-black">

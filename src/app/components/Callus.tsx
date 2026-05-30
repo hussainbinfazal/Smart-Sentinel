@@ -1,11 +1,11 @@
 'use client'
 
-import React from "react";
+import React, { JSX } from "react";
 import { Smartphone } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { toast } from "sonner";
 
-const Callus = () => {
+const Callus = () : JSX.Element => {
   return (
     <div className="max-w-screen-2xl w-full min-h-[100px] dark:bg-black bg-white flex gap-4 items-center justify-center p-4">
       <Card className="w-full h-full  max-h-[400px] p-4  rounded-lg  dark:rounded-sm bg-[#D4D4D4]/30 dark:bg-black">
@@ -16,15 +16,15 @@ const Callus = () => {
                 e.preventDefault();
                 e.stopPropagation();
                 navigator.clipboard
-                  .writeText(process.env.NEXT_PUBLIC_PHONE_NUMBER)
+                  .writeText(process.env.NEXT_PUBLIC_PHONE_NUMBER!)
                   .then(() => {
                     toast.success("Phone number copied to clipboard!");
-                    e.target.style.color = "#10b981";
+                    (e.target as HTMLElement).style.color = "#10b981";
                     setTimeout(() => {
-                      e.target.style.color = "";
+                     (e.target as HTMLElement).style.color = "";
                     }, 500);
                   })
-                  .catch((err) => {
+                  .catch((err: unknown) => {
                     console.error("Failed to copy: ", err);
                   });
               }} />
@@ -33,19 +33,19 @@ const Callus = () => {
             Don't Wait for a Break-In! {"    "} Secure Your Property Today -  
             <span
             className="cursor-pointer underline !underline-offset-8 px-2 text-green-800 "
-              onClick={(e) => {
+              onClick={(e: React.MouseEvent) => {
                 e.preventDefault();
                 e.stopPropagation();
                 navigator.clipboard
-                  .writeText(process.env.NEXT_PUBLIC_PHONE_NUMBER)
-                  .then(() => {
+                  .writeText(process.env.NEXT_PUBLIC_PHONE_NUMBER!)
+                  .then(() : void => {
                     toast.success("Phone number copied to clipboard!");
-                    e.target.style.color = "#10b981";
-                    setTimeout(() => {
-                      e.target.style.color = "";
+                    (e.target as HTMLElement).style.color = "#10b981";
+                    setTimeout(() : void =>  {
+                      (e.target as HTMLElement).style.color = "";
                     }, 500);
                   })
-                  .catch((err) => {
+                  .catch((err: unknown) => {
                     console.error("Failed to copy: ", err);
                   });
               }}

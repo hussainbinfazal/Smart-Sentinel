@@ -1,14 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { JSX, useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
-  CardAction,
+
   CardContent,
-  CardDescription,
   CardFooter,
-  CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -16,24 +14,29 @@ import { Label } from "@/components/ui/label";
 import { z } from "zod";
 import axios from "axios";
 import { toast } from "sonner";
-import { Shield } from "lucide-react";
+
+interface Error {
+  path: (string | number)[];
+  message: string;
+}
+
 
 export const formSchema = z.object({
   name: z.string().min(1, "Name is required").max(100, "Name is too long"),
   email: z.string().email("Invalid email address"),
   phone: z
-    .string()
+    .number()
     .min(10, "Phone must be 10 digits")
     .max(10, "Phone must be 10 digits")
-    .regex(/^\d+$/, "Phone must contain only numbers"),
+    .refine((value) => /^\d+$/.test(String(value)), "Phone must contain only numbers"),
 });
-const Form = () => {
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [name, setName] = useState("");
-  const [errors, setErrors] = useState({});
-const [loading, setLoading] = useState(false)
-  const submitEmail = async () => {
+const Form = (): JSX.Element => {
+  const [email, setEmail] = useState<string>("");
+  const [phone, setPhone] = useState<number>(0);
+  const [name, setName] = useState<string>("");
+  const [errors, setErrors] = useState<Record<string, string>>({});
+const [loading, setLoading] = useState<boolean>(false)
+  const submitEmail = async () : Promise<void> => {
     const emailData = {
       email,
       name,
@@ -46,20 +49,20 @@ const [loading, setLoading] = useState(false)
       );
       setEmail("");
       setName("");
-      setPhone("");
+      setPhone(0);
       setLoading(false)
-    } catch (error) {
+    } catch (error: unknown) {
       toast.error("Failed to send email!");
       setLoading(false)
     }
   };
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     setLoading(true)
     e.preventDefault();
     const result = formSchema.safeParse({ name, email, phone });
     if (!result.success) {
-      const fieldErrors = {};
-      result.error.errors.forEach((err) => {
+      const fieldErrors:Record<string, string> = {};
+      result.error.errors.forEach((err:Error) => {
         fieldErrors[err.path[0]] = err.message;
       });
       setErrors(fieldErrors);
@@ -87,17 +90,17 @@ const [loading, setLoading] = useState(false)
           </p>
         </div>
         <Card className="w-full max-w-sm  md:max-w-full dark:bg-black bg-white">
-          <CardContent>
+          <CardContent className="">
             <form onSubmit={handleSubmit}>
               <div className="flex md:flex-row justify-between flex-col gap-6">
                 <div className="grid gap-3 md:w-1/3">
-                  <Label htmlFor="email">Name</Label>
+                  <Label className="" htmlFor="email">Name</Label>
                   <Input
                     id="name"
                     type="text"
                     placeholder="Your name"
                     value={name}
-                    onChange={(e) => setName(e.target.value.trim())}
+                    onChange={(e : React.ChangeEvent<HTMLInputElement>) => setName(e.target.value.trim())}
                     required
                     className={
                       "dark:bg-black border-t-0 border-r-0 border-l-0 rounded-none outline-none  border-b-2 "
@@ -108,13 +111,13 @@ const [loading, setLoading] = useState(false)
                   )}
                 </div>
                 <div className="grid gap-3 md:w-1/3">
-                  <Label htmlFor="email">Email</Label>
+                  <Label className="" htmlFor="email">Email</Label>
                   <Input
                     id="email"
                     type="email"
                     placeholder="m@example.com"
                     value={email}
-                    onChange={(e) => setEmail(e.target.value.trim())}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value.trim())}
                     required
                     className={
                       "dark:bg-black border-t-0 border-r-0 border-l-0 rounded-none outline-none  border-b-2 focus:outline-none  focus:shadow-none focus:ring-0 focus:border-b-green-800"
@@ -125,7 +128,7 @@ const [loading, setLoading] = useState(false)
                   )}
                 </div>
                 <div className="grid gap-3 md:w-1/3">
-                  <Label htmlFor="email">Phone</Label>
+                  <Label className="" htmlFor="email">Phone</Label>
                   <Input
                     id="number"
                     type="text"
@@ -133,7 +136,7 @@ const [loading, setLoading] = useState(false)
                     required
                     maxLength={10}
                     value={phone}
-                    onChange={(e) => setPhone(e.target.value.trim())}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPhone((parseInt(e.target.value.trim())))}
                     className={
                       "dark:bg-black border-t-0 border-r-0 border-l-0 rounded-none outline-none  border-b-2 focus:border-0 focus:shadow-none"
                     }
@@ -143,7 +146,7 @@ const [loading, setLoading] = useState(false)
                   )}
                 </div>
               </div>
-              <Button type="submit" className="w-full bg-green-800 dark:bg-green-800 mt-6 cursor-pointer text-white " disabled={name === "" || email === "" || phone === ""}>
+              <Button variant="default"  size="default" type="submit" className="w-full bg-green-800 dark:bg-green-800 mt-6 cursor-pointer text-white " disabled={name === "" || email === "" || phone === 0}>
                 {loading ? "Sending..." : "Get Free Security Assessment"}
               </Button>
             </form>

@@ -1,8 +1,8 @@
-import React from "react";
+import React, { JSX } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 
-const OnsiteWork = () => {
+const OnsiteWork = (): JSX.Element => {
   return (
     <div className="max-w-screen-2xl w-full rounded-lg min-h-[300px] bg-white flex flex-col items-center justify-center  relative">
       <Card className="w-full max-w-screen md:max-w-full max-h-[800px]  dark:bg-black relative rounded-lg !p-0">

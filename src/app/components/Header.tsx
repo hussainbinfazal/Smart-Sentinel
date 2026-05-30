@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useState, useRef, useMemo, useCallback } from "react";
+import { useState, useRef, useMemo, useCallback, JSX } from "react";
 import { Button } from "@/components/ui/button";
 import { useEffect } from "react";
 import { toast } from "sonner";
@@ -9,22 +9,14 @@ import Scroller from "./Scroller";
 // import { badgeVariants } from "@/components/ui/badge";
 import { Phone } from "lucide-react";
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { ThemeToggler } from "./ThemeToggler";
 import Image from "next/image";
 // import { BarLoader, ClipLoader } from "react-spinners";
 
-export default function Header() {
+export default function Header(): JSX.Element {
   const router = useRouter();
-  const [loading, setLoading] = useState(false);
-  const [isHovering, setIsHovering] = useState(false);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [isHovering, setIsHovering] = useState<boolean>(false);
   return (
     <header className="sticky top-0 z-50 flex justify-center items-center w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-4 ">
       <Scroller />
@@ -82,16 +74,16 @@ export default function Header() {
                 >
                   <span
                     className="text-[#9D9FA0] bg-none dark:text-white whitespace-nowrap w-full"
-                    onClick={(e) => {
+                    onClick={(e:React.MouseEvent<HTMLButtonElement> ) => {
                       e.preventDefault();
                       e.stopPropagation();
                       navigator.clipboard
-                        .writeText(process.env.NEXT_PUBLIC_PHONE_NUMBER)
+                        .writeText(process.env.NEXT_PUBLIC_PHONE_NUMBER!)
                         .then(() => {
                           toast.success("Phone number copied to clipboard!");
-                          e.target.style.color = "#10b981";
+                          (e.target as HTMLElement).style.color = "#10b981";
                           setTimeout(() => {
-                            e.target.style.color = "";
+                            (e.target as HTMLElement).style.color = "";
                           }, 500);
                         })
                         .catch((err) => {
@@ -100,14 +92,7 @@ export default function Header() {
                     }}
                     title="Click to copy phone number"
                   >
-                    <a
-                      href={`https://wa.me/${process.env.NEXT_PUBLIC_PHONE_NUMBER}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className=" underline"
-                    >
-                      {process.env.NEXT_PUBLIC_PHONE_NUMBER}
-                    </a>
+                    
                   </span>
                 </div>
               </div>
@@ -170,9 +155,9 @@ export default function Header() {
                           .writeText(`${process.env.NEXT_PUBLIC_PHONE_NUMBER}`)
                           .then(() => {
                             toast.success("Phone number copied to clipboard!");
-                            e.target.style.color = "#10b981";
+                            (e.target as HTMLElement).style.color = "#10b981";
                             setTimeout(() => {
-                              e.target.style.color = "";
+                              (e.target as HTMLElement).style.color = "";
                             }, 500);
                           })
                           .catch((err) => {
@@ -181,14 +166,7 @@ export default function Header() {
                       }}
                       title="Click to copy phone number"
                     >
-                      <a
-                        href={`https://wa.me/${process.env.NEXT_PUBLIC_PHONE_NUMBER}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className=" underline"
-                      >
-                        {process.env.NEXT_PUBLIC_PHONE_NUMBER}
-                      </a>
+                      
                     </span>
                   </div>
                 </div>
