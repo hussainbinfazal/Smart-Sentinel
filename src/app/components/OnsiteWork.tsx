@@ -25,8 +25,7 @@ const OnsiteWork = (): JSX.Element => {
                   We take care of everything for you 
                 </h2>
                 <p className=" w-full max-w-[4xl] text-[10px] md:text-lg text-gray-100 font-normal mt-4  leading-relaxed">
-                  You don't have to worry about a thing.Our Certified Pros install everything for you & show you how to use it.And with 24/7 monitoring and support,help is always just a few seconds away.
-                
+                You don&apos;t have to worry about a thing. Our Certified Pros install everything for you &amp; show you how to use it. And with 24/7 monitoring and support, help is always just a few seconds away.                
                 </p>
               </div>
             </div>

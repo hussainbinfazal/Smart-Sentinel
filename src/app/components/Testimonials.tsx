@@ -76,7 +76,7 @@ const Testimonials = () : JSX.Element => {
 
       {/* Testimonial */}
       <p className="text-lg md:text-2xl leading-relaxed font-medium text-gray-600 dark:text-white max-w-3xl">
-        "{testimonial?.text}"
+        &ldquo;{testimonial?.text}&rdquo;
       </p>
 
       {/* User */}

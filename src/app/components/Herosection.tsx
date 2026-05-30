@@ -14,9 +14,8 @@ import products from "@/data/products.json";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 const Herosection: React.FC = () => {
-  useEffect(() => {
-    console.log("This is the products data", products);
-  }, [products]);
+
+  
   return (
     <div className="max-w-screen-2xl min-h-[100px] w-full flex flex-col items-center justify-center p-0 bg-[#D4D4D4]/20 dark:bg-black">
       <Carousel

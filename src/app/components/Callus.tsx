@@ -29,8 +29,8 @@ const Callus = () : JSX.Element => {
                   });
               }} />
           </span>
-          <h3 className="text:sm md:text-3xl break-words leading-normal font-medium">
-            Don't Wait for a Break-In! {"    "} Secure Your Property Today -  
+          <h3 className="text-sm md-text-3xl break-words leading-normal font-medium">
+             Don&apos;t Wait for a Break-In! {"    "} Secure Your Property Today -  
             <span
             className="cursor-pointer underline !underline-offset-8 px-2 text-green-800 "
               onClick={(e: React.MouseEvent) => {
