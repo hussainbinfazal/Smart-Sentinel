@@ -21,5 +21,5 @@ const emailSchema = new mongoose.Schema<IEmail>({
     },
 },{timestamps: true});
 
-const Email = mongoose.models.Email || mongoose.model("Email", emailSchema);
+const Email: mongoose.Model<IEmail> = mongoose.models.Email || mongoose.model("Email", emailSchema);
 export default Email;

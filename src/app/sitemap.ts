@@ -6,19 +6,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,
-    },
-    {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/#testimonials`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 1,
-    },
-    {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/#whatwedo`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 1,
-    }]
+    },]
 
   return [
     ...staticPages
