@@ -123,7 +123,8 @@ export default function Header(): JSX.Element {
                 About
               </Link>
               <Link
-                href={`https://wa.me/${process.env.NEXT_PUBLIC_PHONE_NUMBER}`}                target="_blank"
+                href={`https://wa.me/${process.env.NEXT_PUBLIC_PHONE_NUMBER}`} 
+                target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 overflow-hidden "
               >

@@ -33,7 +33,7 @@ const Testimonials = () : JSX.Element => {
     },
   ]);
   return (
-    <div className="max-w-screen-2xl w-full min-h-[200px] max-h-[800px] md:max-h-[700px] lg:max-h-[700px] bg-white dark:bg-black flex flex-col items-center justify-center border-none outline-none p-8 rounded-2xl" id="testimonials ">
+    <div className="max-w-screen-2xl w-full min-h-[200px] max-h-[800px] md:max-h-[700px] lg:max-h-[700px] bg-white dark:bg-black flex flex-col items-center justify-center border-none outline-none p-8 rounded-2xl" id="testimonials">
       <Carousel
         setApi={() => {}} //setApi
         className="w-full md:w-2/3 max-w-full p-0  bg-white dark:bg-black  !outline-none !border-none !shadow-none !rounded-3xl"
@@ -118,6 +118,6 @@ const Testimonials = () : JSX.Element => {
       </Carousel>
     </div>
   );
-};
+};  
 
 export default Testimonials;
