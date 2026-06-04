@@ -7,7 +7,7 @@ const OnsiteWork = (): JSX.Element => {
     <div className="max-w-screen-2xl w-full rounded-lg min-h-[300px] bg-white flex flex-col items-center justify-center  relative">
       <Card className="w-full max-w-screen md:max-w-full max-h-[800px]  dark:bg-black relative rounded-lg !p-0">
         <CardContent className="flex !p-0 aspect-square flex-col gap-7 pb-4 relative w-full h-full max-h-[800px] rounded-lg">
-          <div className="relative w-full h-full aspect-[16/9] border-none outline-none rounded-lg ">
+          <div className="relative w-full h-full aspect-[16/9] border-none outline-none rounded-lg overflow-hidden ">
             <Image
               src="/technicians/installation.webp"
               alt={"technician Image"}
@@ -29,7 +29,7 @@ const OnsiteWork = (): JSX.Element => {
                 </p>
               </div>
             </div>
-            <div className="backdrop-blur-[2px]  backdrop-brightness-105 z-5 rounded-sm dark:rounded-lg w-full h-full !border-none !outline-none"></div>
+            <div className="absolute inset-0 backdrop-blur-[2px]  backdrop-brightness-105 z-5 rounded-sm dark:rounded-lg  !border-none !outline-none"></div>
           </div>
           
          

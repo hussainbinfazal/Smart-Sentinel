@@ -44,13 +44,13 @@ const Whatwedo = () : JSX.Element => {
       </h2>
       <div className="flex flex-col md:flex-row gap-4 w-full min-h-[400px] justify-center  md:items-start mt-8 items-center">
         {cards.map((card) => (
-          <Card key={card.key} className="w-full max-w-sm md:max-w-full min-h-[350px] h-[400px] xl:h-[380px] 2xl:h-[300px] md:h-[400px]  max-h-[500px] overflow-hidden dark:bg-black/40">
-            <CardContent className="flex flex-col justify-between gap-7 pb-4">
+          <Card key={card.key} className="w-full max-w-sm md:max-w-full min-h-[350px] dark:bg-black/40">
+            <CardContent className="flex flex-col items-center gap-7 pb-4">
               <span className="text-black/80 dark:text-white w-full justify-center flex  text-lg">
                 {card?.icon}
               </span>
-              <h2 className="text-2xl font-semibold text-center whitespace-wrap">{card?.heading}</h2>
-              <p className="text-black/110 text-center whitespace-pre-wrap overflow-hidden max-h-[150px]">{card?.text}</p>
+              <h2 className="text-2xl font-semibold text-center break-words">{card?.heading}</h2>
+              <p className="text-black/100 text-center whitespace-pre-wrap ">{card?.text}</p>
             </CardContent>
             
           </Card>
