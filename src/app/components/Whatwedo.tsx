@@ -50,7 +50,7 @@ const Whatwedo = () : JSX.Element => {
                 {card?.icon}
               </span>
               <h2 className="text-2xl font-semibold text-center break-words">{card?.heading}</h2>
-              <p className="text-black/100 text-center whitespace-pre-wrap ">{card?.text}</p>
+              <p className="text-black/100n dark:text-white text-center whitespace-pre-wrap ">{card?.text}</p>
             </CardContent>
             
           </Card>
